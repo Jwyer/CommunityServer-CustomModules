@@ -2,7 +2,7 @@
 
 ## How to create your own module for ONLYOFFICE
 
-**1.v Create an ASP.NET Web Application (ASC.Web.Sample) project
+**1.** Create an ASP.NET Web Application (ASC.Web.Sample) project
 and put it to the ...web\studio\ASC.Web.Studio\Products\Sample folder
 IMPORTANT!!! The output dll file name must be "ASC.Web.*.dll";
 
