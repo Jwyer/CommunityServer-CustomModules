@@ -1,5 +1,36 @@
 # CommunityServer-CustomModules
 
+## How it works
+
+**1.** Get CommunityServer from https://github.com/ONLYOFFICE/CommunityServer 
+
+**2.** Copy EmptySample and Sample to Products folder https://github.com/ONLYOFFICE/CommunityServer/tree/master/web/studio/ASC.Web.Studio/Products
+
+**3.** Copy ASC.Api.Sample to ASC.Api folder https://github.com/ONLYOFFICE/CommunityServer/tree/master/module/ASC.Api
+
+**4.** Add to build.proj https://github.com/ONLYOFFICE/CommunityServer/blob/master/build/msbuild/build.proj same code
+```
+<!-- Samples -->
+<ProjectToBuild Include="$(ASCDir)web\studio\ASC.Web.Studio\Products\EmptySample\ASC.Web.EmptySample.csproj"/>
+<ProjectToBuild Include="$(ASCDir)web\studio\ASC.Web.Studio\Products\Sample\ASC.Web.Sample.csproj"/>
+```
+and
+```
+<ProjectToBuild Include="$(ASCDir)module\ASC.Api\ASC.Api.Sample\ASC.Api.Sample.csproj"/>
+```
+by analogy with already existing projects
+NOTE!!! the order is important
+
+**5.** Add ASC.Api.Sample.SampleApi to web\studio\ASC.Web.Studio\web.autofac.config
+```
+<component
+          type="ASC.Api.Sample.SampleApi, ASC.Api.Sample"
+          service="ASC.Api.Interfaces.IApiEntryPoint, ASC.Api"
+          name="sample"/>
+```
+
+**6.** run the Build.bat file https://github.com/ONLYOFFICE/CommunityServer/blob/master/build/Build.bat
+
 ## How to create your own module for ONLYOFFICE
 
 **1.** Create an ASP.NET Web Application (ASC.Web.Sample) project
@@ -60,10 +91,10 @@ ASC.Web.Sample.dll
 ```
 public class SampleApi : IApiEntryPoint
 {
-	public string Name
-	{
-		get { return "sample"; }
-	}
+    public string Name
+    {
+        get { return "sample"; }
+    }
 }
 ```
 
@@ -72,7 +103,7 @@ public class SampleApi : IApiEntryPoint
 [Attributes.Create("create", false)]
 public SampleClass Create(string value)
 {
-	return SampleDao.Create(value);
+    return SampleDao.Create(value);
 }
 ```
 The attribute specifies the type of method, the path by which this method will be called, the authorization and verification of the tariff plan in it.
@@ -102,16 +133,16 @@ and run the build\Build.bat file
 **7.** IMPORTANT!!! Add ASC.Api.Sample.SampleApi to web\studio\ASC.Web.Studio\web.autofac.config
 ```
 <component
-		  type="ASC.Api.Sample.SampleApi, ASC.Api.Sample"
-		  service="ASC.Api.Interfaces.IApiEntryPoint, ASC.Api"
-		  name="sample"/>
+          type="ASC.Api.Sample.SampleApi, ASC.Api.Sample"
+          service="ASC.Api.Interfaces.IApiEntryPoint, ASC.Api"
+          name="sample"/>
 ```
 
 **8.** Build project, run website and test the method by making a query with jQuery
 ```
 $.ajax({
-	type: "POST",
-	url: "http://localhost:port/api/2.0/sample/create.json",
-	data: {value: "create"}
+    type: "POST",
+    url: "http://localhost:port/api/2.0/sample/create.json",
+    data: {value: "create"}
 });
 ```
