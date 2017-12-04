@@ -67,13 +67,6 @@
     <Content Include="App_Themes\Default\images\product_logo_disabled.png" />
     <Content Include="App_Themes\Default\images\product_logo_large.png" />
     <Content Include="App_Themes\Default\images\product_logo_nav.png" />
-    <Content Include="Controls\ApiView.ascx" />
-    <Content Include="Controls\DatabaseView.ascx" />
-    <Content Include="Controls\UserControlsView.ascx" />
-    <Content Include="Controls\StylesView.ascx" />
-    <Content Include="Controls\ElementsView.ascx" />
-    <Content Include="Controls\HelpView.ascx" />
-    <Content Include="Controls\DefaultView.ascx" />
     <Content Include="Controls\NavigationSidePanel.ascx" />
     <Content Include="Api.aspx" />
     <Content Include="Database.aspx" />
@@ -94,55 +87,6 @@
     <Compile Include="Configuration\ProductEntryPoint.cs" />
     <Compile Include="Configuration\SampleSearchHandler.cs" />
     <Compile Include="Classes\SearchResultsView.cs" />
-    <Compile Include="Controls\ApiView.ascx.cs">
-      <DependentUpon>ApiView.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Controls\ApiView.ascx.designer.cs">
-      <DependentUpon>ApiView.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\DatabaseView.ascx.cs">
-      <DependentUpon>DatabaseView.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Controls\DatabaseView.ascx.designer.cs">
-      <DependentUpon>DatabaseView.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\UserControlsView.ascx.cs">
-      <DependentUpon>UserControlsView.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Controls\UserControlsView.ascx.designer.cs">
-      <DependentUpon>UserControlsView.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\StylesView.ascx.cs">
-      <DependentUpon>StylesView.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Controls\StylesView.ascx.designer.cs">
-      <DependentUpon>StylesView.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\ElementsView.ascx.cs">
-      <DependentUpon>ElementsView.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Controls\ElementsView.ascx.designer.cs">
-      <DependentUpon>ElementsView.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\HelpView.ascx.cs">
-      <DependentUpon>HelpView.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Controls\HelpView.ascx.designer.cs">
-      <DependentUpon>HelpView.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\DefaultView.ascx.cs">
-      <DependentUpon>DefaultView.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Controls\DefaultView.ascx.designer.cs">
-      <DependentUpon>DefaultView.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Controls\NavigationSidePanel.ascx.cs">
       <DependentUpon>NavigationSidePanel.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -25,7 +25,6 @@
 
 
 using System;
-using ASC.Web.Sample.Controls;
 using ASC.Web.Sample.Resources;
 using ASC.Web.Studio;
 
@@ -35,7 +34,6 @@ namespace ASC.Web.Sample
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            CommonContainerHolder.Controls.Add(LoadControl(StylesView.Location));
             Title = SampleResource.Styles;
         }
     }

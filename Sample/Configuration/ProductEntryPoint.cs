@@ -52,7 +52,7 @@ namespace ASC.Web.Sample.Configuration
 
         public override string ExtendedDescription
         {
-            get { return string.Format(SampleResource.ExtendedProductDescription, "<span style='display:none'>", "</span>"); }
+            get { return SampleResource.ExtendedProductDescription; }
         }
 
         public override string Description

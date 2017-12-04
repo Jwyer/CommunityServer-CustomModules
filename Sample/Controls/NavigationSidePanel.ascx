@@ -2,7 +2,6 @@
 
 <%@ Control Language="C#" AutoEventWireup="true" CodeBehind="NavigationSidePanel.ascx.cs" Inherits="ASC.Web.Sample.Controls.NavigationSidePanel" %>
 
-
 <div class="page-menu">
     <ul class="menu-actions">
         <li id="menuCreateNewButton" class="menu-main-button without-separator middle" title="<%= SampleResource.NavigateTo %>">
@@ -13,7 +12,6 @@
             <span class="btn_other-actions">...</span>
         </li>
     </ul>
-
     <div id="createNewButton" class="studio-action-panel">
         <ul class="dropdown-content">
             <li>
@@ -39,7 +37,6 @@
             </li>
         </ul>
     </div>
-
     <div id="otherActions" class="studio-action-panel">
         <ul class="dropdown-content">
             <li>
@@ -65,7 +62,6 @@
             </li>
         </ul>
     </div>
-
     <ul class="menu-list">
         <li class="menu-item  none-sub-list<% if (CurrentPage == "default") { %> active<% } %>">
             <a class="menu-item-label outer-text text-overflow" href="default.aspx">
@@ -112,7 +108,6 @@
             </a>
         </li>
     </ul>
-
     <% if(!string.IsNullOrEmpty(ExceptionMessage)) { %>
     <div class="red-text"><%= ExceptionMessage %></div>
     <% } %>
