@@ -23,7 +23,7 @@ ASC.Web.Core.dll
 ASC.Web.Studio.dll</code></pre>
             </li>
             <li>
-                <p>Implement the IProduct interface in the ProductEntryPoint.cs file</p>
+                <p>Implement the <span class="bg">IProduct</span> interface in the <span class="bg">ProductEntryPoint.cs</span> file</p>
                 <div class="note">The ProductID must be unique Guid (in VS2012 is generated as TOOLS->GUID->New GUID)</div>
             </li>
             <li>

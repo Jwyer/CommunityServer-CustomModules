@@ -8,7 +8,7 @@
         <ol>
             <li>
                 <p>
-                    Create an Class Library (<span class="bg">ASC.Api.Sample</span>) project
+                    Create a Class Library (<span class="bg">ASC.Api.Sample</span>) project
                 and put it to the <span class="bg">...module\ASC.Api\ASC.Api.Sample</span> folder
                 </p>
                 <div class="note">The output dll file name must be "ASC.Api.*.dll"</div>
@@ -23,7 +23,7 @@ ASC.Web.Sample.dll</code></pre>
 
             </li>
             <li>
-                <p>Create <span class="bg">SampleApi</span> class and implement the <span class="bg">IApiEntryPoint</span> interface.</p>
+                <p>Create the <span class="bg">SampleApi</span> class and implement the <span class="bg">IApiEntryPoint</span> interface.</p>
 
 <pre><code>public class SampleApi : IApiEntryPoint
 {
@@ -35,7 +35,7 @@ ASC.Web.Sample.dll</code></pre>
 
             </li>
             <li>
-                <p>Create public methods with specific attributes.</p>
+                <p>Create public methods with the specified attributes.</p>
 
 <pre><code>[Attributes.Create("create", false)]
 public SampleClass Create(string value)

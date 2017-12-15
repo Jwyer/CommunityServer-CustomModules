@@ -6,7 +6,7 @@
     <div>
         <h1>Help page</h1>
 
-        <p>If you have any questions visit links below:</p>
+        <p>If you have any questions, visit the links below:</p>
 
         <ol>
             <li>
