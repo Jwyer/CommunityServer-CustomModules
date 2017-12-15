@@ -5,11 +5,12 @@
 <asp:Content ID="CommonContainer" ContentPlaceHolderID="BTPageContent" runat="server">
     <div>
         <h1>User selector</h1>
-        <div>
+        
+        <p>
             <span class="link dotline" id="userSelector">Choose User</span>
-<pre>
-<code>
-jq("#userSelector").useradvancedSelector({
+        </p>
+
+<pre><code>jq("#userSelector").useradvancedSelector({
     itemsChoose: [],
     itemsDisabledIds: [],
     canadd: false,
@@ -23,19 +24,16 @@ jq("#userSelector").useradvancedSelector({
 jq("#userSelector").useradvancedSelector("unselect", [Teamlab.profile.id]);
 jq("#userSelector").useradvancedSelector("reset");
 jq("#userSelector").useradvancedSelector("select", [Teamlab.profile.id]);
-jq("#userSelector").useradvancedSelector("disable", [Teamlab.profile.id]);
-</code>
-</pre>
-        </div>
+jq("#userSelector").useradvancedSelector("disable", [Teamlab.profile.id]);</code></pre>
+
         <h1>Email selector</h1>
-        <div>
-            <div id="emailSelector" class="emailselector">
-                <input type="text" class="emailselector-input" autocomplete="off">
-                <pre class="emailSelector-input-buffer"></pre>
-            </div>
-<pre>
-<code>
-var itemsString = '"test" &lt;test@test.ru&gt;, NOT VALID, test@test.com, &lt;test@test.org&gt;';
+
+        <div id="emailSelector" class="emailselector">
+            <input type="text" class="emailselector-input" autocomplete="off">
+            <pre class="emailSelector-input-buffer"></pre>
+        </div>
+
+<pre><code>var itemsString = '"test" &lt;test@test.ru&gt;, NOT VALID, test@test.com, &lt;test@test.org&gt;';
 var itemsArray = [
     '"test.ru" &lt;test@test.ru&gt;',
     '"BROKEN" &lt;net@net.&gt;',
@@ -53,17 +51,15 @@ jq("#emailSelector").AdvancedEmailSelector("init", {
 });
 var selectedJson = jq("#emailSelector").AdvancedEmailSelector("get");
 var selectedString = jq("#emailSelector").AdvancedEmailSelector("getString");
-jq("#emailSelector").AdvancedEmailSelector("clear");
-</code>  
-</pre>
-        </div>
+jq("#emailSelector").AdvancedEmailSelector("clear");</code></pre>
+
         <h1>Filter</h1>
-        <div>
-            <div id="peopleFilter"></div>
-            <div id="peopleFilterContent"></div>
-<pre>
-<code>
-jq("#peopleFilter").advansedFilter({
+
+        <div id="peopleFilter"></div>
+
+        <div id="peopleFilterContent"></div>
+
+<pre><code>jq("#peopleFilter").advansedFilter({
     maxfilters: -1,
     anykey: false,
     store: false,
@@ -122,9 +118,7 @@ jq("#peopleFilter").advansedFilter({
 })
 .bind("resetallfilters", function () {
     jq("#peopleFilterContent").html("");
-});
-</code>
-</pre>
-        </div>
+});</code></pre>
+
     </div>
 </asp:Content>

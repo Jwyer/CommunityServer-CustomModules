@@ -5,57 +5,53 @@
 <asp:Content ID="CommonContainer" ContentPlaceHolderID="BTPageContent" runat="server">
     <div>
         <h1>How to create your own module for ONLYOFFICE</h1>
+        
         <ol>
-            <li>Create an ASP.NET Web Application (ASC.Web.Sample) project<br />
-                and put it to the ...web\studio\ASC.Web.Studio\Products\Sample folder<br />
-                IMPORTANT!!! The output dll file name must be "ASC.Web.*.dll";
+            <li>
+                <p>
+                    Create an ASP.NET Web Application (<span class="bg">ASC.Web.Sample</span>)
+                    project and put it to the <span class="bg">...web\studio\ASC.Web.Studio\Products\Sample</span> folder
+                </p>
+                <div class="note">The output dll file name must be "ASC.Web.*.dll"</div>
             </li>
-            <li>Connect the required references from ...\web\studio\ASC.Web.Studio\bin\
-<pre>
-<code>
-ASC.Common.dll
+            <li>
+                <p>Connect the required references from <span class="bg">...\web\studio\ASC.Web.Studio\bin\</span></p>
+<pre><code>ASC.Common.dll
 ASC.Core.Common.dll
 ASC.Data.Storage.dll
 ASC.Web.Core.dll
-ASC.Web.Studio.dll
-</code>
-</pre>
+ASC.Web.Studio.dll</code></pre>
             </li>
-            <li>Implement the IProduct interface in the ProductEntryPoint.cs file<br />
-                IMPORTANT!!! The ProductID must be unique Guid (in VS2012 is generated as TOOLS->GUID->New GUID)
+            <li>
+                <p>Implement the IProduct interface in the ProductEntryPoint.cs file</p>
+                <div class="note">The ProductID must be unique Guid (in VS2012 is generated as TOOLS->GUID->New GUID)</div>
             </li>
-            <li>NOTE!!! Add the following in the AssemblyInfo.cs file:
-<pre>
-<code>
-[assembly: Product(typeof(ASC.Web.Sample.Configuration.ProductEntryPoint))]
-</code>
-</pre>
+            <li>
+                <p>Add the following in the <span class="bg">AssemblyInfo.cs</span> file:</p>
+<pre><code>[assembly: Product(typeof(ASC.Web.Sample.Configuration.ProductEntryPoint))]</code></pre>
             </li>
-            <li>Inherit the Master from web\studio\ASC.Web.Studio\Masters\BaseTemplate.master
+            <li>
+                <p class="none">Inherit the Master from <span class="bg">web\studio\ASC.Web.Studio\Masters\BaseTemplate.master</span></p>
             </li>
-            <li>Set the output path in the project properties as 
-<pre>
-<code>
-&lt;OutputPath&gt;..\..\bin\&lt;/OutputPath&gt;
-</code>
-</pre>
-                so that the builds were created at the web\studio\ASC.Web.Studio\bin folder
+            <li>
+                <p>Set the output path in the project properties as</p>
+<pre><code>&lt;OutputPath&gt;..\..\bin\&lt;/OutputPath&gt;</code></pre>
+                <p class="top">so that the builds were created at the <span class="bg">web\studio\ASC.Web.Studio\bin</span> folder</p>
             </li>
-            <li>The project can be built manually or using the builder.
-                <br />
-                For the latter add the following lines to the build\msbuild\build.proj file:
-<pre>
-<code>
-&lt;ProjectToBuild Include="$(ASCDir)web\studio\ASC.Web.Studio\Products\Sample\ASC.Web.Sample.csproj"/&gt;
-</code>
-</pre>
-                and run the build\Build.bat file
+            <li>
+                <p>The project can be built manually or using the builder.</p>
+                <p>For the latter add the following lines to the <span class="bg">build\msbuild\build.proj</span> file:</p>
+<pre><code>&lt;ProjectToBuild Include="$(ASCDir)web\studio\ASC.Web.Studio\Products\Sample\ASC.Web.Sample.csproj"/&gt;</code></pre>
+                <p class="top">and run the <span class="bg">build\Build.bat</span> file</p>
             </li>
-            <li>After the build run the website at the localhost:port address,<br />
-                go to the "Modules & Tools" Settings page (http://localhost:port/management.aspx?type=2)<br />
-                and enable the new Sample module.<br />
-                It will be available in the portal header drop-down menu afterwards<br />
-                or using the direct link: http://localhost:port/products/sample/default.aspx
+            <li>
+                <p class="none">
+                    After the build run the website at the <span class="bg">localhost:port</span> address,
+                    go to the "Modules & Tools" Settings page (<span class="bg">http://localhost:port/management.aspx?type=2</span>)
+                    and enable the new Sample module.
+                    It will be available in the portal header drop-down menu afterwards
+                    or using the direct link: http://localhost:port/products/sample/default.aspx
+                </p>
             </li>
         </ol>
     </div>

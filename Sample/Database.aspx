@@ -5,34 +5,28 @@
 <asp:Content ID="CommonContainer" ContentPlaceHolderID="BTPageContent" runat="server">
     <div>
         <h1>How to use ONLYOFFICE DataBase</h1>
+        
         <ol>
-            <li>Create sample table in DataBase
-<pre>
-<code>
-CREATE TABLE IF NOT EXISTS `sample_table` (
+            <li>
+                <p>Create sample table in DataBase</p>
+<pre><code>CREATE TABLE IF NOT EXISTS `sample_table` (
     `id` INT(11) NOT NULL AUTO_INCREMENT,
     `value` VARCHAR(255) NOT NULL,
     PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-</code>
-</pre>
-                or add this code to ..build\sql\onlyoffice.sql script and run them
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;</code></pre>
+                <p class="top">or add this code to <span class="bg">..build\sql\onlyoffice.sql</span> script and run them</p>
             </li>
-            <li>Create data class
-<pre>
-<code>
-public class SampleClass
+            <li>
+                <p>Create data class</p>
+<pre><code>public class SampleClass
 {
     public int Id { get; set; }
     public string Value { get; set; }
-}
-</code>
-</pre>
+}</code></pre>
             </li>
-            <li>Create dao class with CRUD methods
-<pre>
-<code>
-public static class SampleDao
+            <li>
+                <p>Create dao class with CRUD methods</p>
+<pre><code>public static class SampleDao
 {
     private const string DbId = "core";
     private const string Table = "sample_table";
@@ -121,11 +115,10 @@ public static class SampleDao
             db.ExecuteNonQuery(query);
         }
     }
-}
-</code>
-</pre>
+}</code></pre>
             </li>
-            <li>build project
+            <li>
+                <p class="none">build project</p>
             </li>
         </ol>
     </div>

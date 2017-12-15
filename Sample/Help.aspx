@@ -5,20 +5,22 @@
 <asp:Content ID="CommonContainer" ContentPlaceHolderID="BTPageContent" runat="server">
     <div>
         <h1>Help page</h1>
-        If you have any questions visit links below:
-        <ul>
+
+        <p>If you have any questions visit links below:</p>
+
+        <ol>
             <li>
-                <a href="http://helpcenter.onlyoffice.com/" target="_blank">Help Center</a>
+                <a href="http://helpcenter.onlyoffice.com/" target="_blank" class="link underline">Help Center</a>
             </li>
             <li>
-                <a href="http://cloud.onlyoffice.org/" target="_blank">SaaS Forum</a>
+                <a href="http://cloud.onlyoffice.org/" target="_blank" class="link underline">SaaS Forum</a>
             </li>
             <li>
-                <a href="http://dev.onlyoffice.org/" target="_blank">Server Forum</a>
+                <a href="http://dev.onlyoffice.org/" target="_blank" class="link underline">Server Forum</a>
             </li>
             <li>
-                <a href="http://support.onlyoffice.com/" target="_blank">Support Contact Form</a>
+                <a href="http://support.onlyoffice.com/" target="_blank" class="link underline">Support Contact Form</a>
             </li>
-        </ul>
+        </ol>
     </div>
 </asp:Content>

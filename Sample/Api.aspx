@@ -6,35 +6,38 @@
     <div>
         <h1>How to create  API for your own module</h1>
         <ol>
-            <li>Create an Class Library (ASC.Api.Sample) project<br />
-                and put it to the ...module\ASC.Api\ASC.Api.Sample folder<br />
-                IMPORTANT!!! The output dll file name must be "ASC.Api.*.dll";
+            <li>
+                <p>
+                    Create an Class Library (<span class="bg">ASC.Api.Sample</span>) project
+                and put it to the <span class="bg">...module\ASC.Api\ASC.Api.Sample</span> folder
+                </p>
+                <div class="note">The output dll file name must be "ASC.Api.*.dll"</div>
             </li>
-            <li>Connect the required references from ...\web\studio\ASC.Web.Studio\bin\
-<pre>
-<code>
-ASC.Api.dll
-ASC.Web.Sample.dll
-</code>
-</pre>
+            <li>
+                <p>
+                    Connect the required references from <span class="bg">...\web\studio\ASC.Web.Studio\bin\</span>
+                </p>
+
+<pre><code>ASC.Api.dll
+ASC.Web.Sample.dll</code></pre>
+
             </li>
-            <li>Create SampleApi class and implement the IApiEntryPoint interface.
-<pre>
-<code>
-public class SampleApi : IApiEntryPoint
+            <li>
+                <p>Create <span class="bg">SampleApi</span> class and implement the <span class="bg">IApiEntryPoint</span> interface.</p>
+
+<pre><code>public class SampleApi : IApiEntryPoint
 {
     public string Name
     {
         get { return "sample"; }
     }
-}
-</code>
-</pre>
+}</code></pre>
+
             </li>
-            <li>Create public methods with specific attributes.
-<pre>
-<code>
-[Attributes.Create("create", false)]
+            <li>
+                <p>Create public methods with specific attributes.</p>
+
+<pre><code>[Attributes.Create("create", false)]
 public SampleClass Create(string value)
 {
     return SampleDao.Create(value);
@@ -62,88 +65,74 @@ public void Update(int id, string value)
 public void Delete(int id)
 {
     SampleDao.Delete(id);
-}
-</code>
-</pre>
-                The attribute specifies the type of method, the path by which this method will be called, the authorization and verification of the tariff plan in it.<br />
-                Possible options are shown below:
-<pre>
-<code>
-CreateAttribute(string path, bool requiresAuthorization = true, bool checkPayment = true) //corresponds to the "POST" request
-UpdateAttribute(string path, bool requiresAuthorization = true, bool checkPayment = true) //corresponds to the "PUT" request
-DeleteAttribute(string path, bool requiresAuthorization = true, bool checkPayment = true) //corresponds to the "DELETE" request
-ReadAttribute(string path, bool requiresAuthorization = true, bool checkPayment = true) //corresponds to the "GET" request
-</code>
-</pre>
-                the parameters requiresAuthorization, checkPayment are optional and have a value of true by default
+}</code></pre>
+
+                <p class="top">
+                    The attribute specifies the type of method, the path by which this method will be called, the authorization and verification of the tariff plan in it. Possible options are shown below:
+                </p>
+
+<pre class="top"><code>CreateAttribute(string path, bool requiresAuthorization = true, bool checkPayment = true) //"POST" request
+UpdateAttribute(string path, bool requiresAuthorization = true, bool checkPayment = true) //"PUT" request
+DeleteAttribute(string path, bool requiresAuthorization = true, bool checkPayment = true) //"DELETE" request
+ReadAttribute(string path, bool requiresAuthorization = true, bool checkPayment = true) //"GET" request</code></pre>
+                
+                <p class="top">the parameters <span class="bg">requiresAuthorization</span>, <span class="bg">checkPayment</span> are optional and have a value of true by default</p>
             </li>
-            <li>Set the output path in the project properties as
-<pre>
-<code>
-&lt;OutputPath&gt;..\..\..\web\studio\ASC.Web.Studio\bin\&lt;/OutputPath&gt;
-&lt;DocumentationFile&gt;..\..\..\web\studio\ASC.Web.Studio\bin\ASC.Api.Sample.XML&lt;/DocumentationFile&gt;
-</code>
-</pre>
-                so that the builds were created at the web\studio\ASC.Web.Studio\bin folder
+            <li>
+                <p>Set the output path in the project properties as</p>
+
+<pre><code>&lt;OutputPath&gt;..\..\..\web\studio\ASC.Web.Studio\bin\&lt;/OutputPath&gt;
+&lt;DocumentationFile&gt;..\..\..\web\studio\ASC.Web.Studio\bin\ASC.Api.Sample.XML&lt;/DocumentationFile&gt;</code></pre>
+
+                <p class="top">so that the builds were created at the <span class="bg">web\studio\ASC.Web.Studio\bin</span> folder</p>
             </li>
-            <li>The project can be built manually or using the builder.
-                <br />
-                For the latter add the following lines to the build\msbuild\build.proj file:
-<pre>
-<code>
-&lt;ProjectToBuild Include="$(ASCDir)module\ASC.Api\ASC.Api.Sample\ASC.Api.Sample.csproj"/&gt;
-</code>
-</pre>
-                and run the build\Build.bat file
+            <li>
+                <p>The project can be built manually or using the builder.</p>
+                <p>For the latter add the following lines to the <span class="bg">build\msbuild\build.proj</span> file:</p>
+
+<pre><code>&lt;ProjectToBuild Include="$(ASCDir)module\ASC.Api\ASC.Api.Sample\ASC.Api.Sample.csproj"/&gt;</code></pre>
+
+                <p class="top">and run the <span class="bg">build\Build.bat</span> file</p>
             </li>
-            <li>IMPORTANT!!! Add ASC.Api.Sample.SampleApi to web\studio\ASC.Web.Studio\web.autofac.config
-<pre>
-<code>
-&lt;component
+            <li>
+                <p>Add <span class="bg">ASC.Api.Sample.SampleApi</span> to <span class="bg">web\studio\ASC.Web.Studio\web.autofac.config</span></p>
+
+<pre><code>&lt;component
           type="ASC.Api.Sample.SampleApi, ASC.Api.Sample"
           service="ASC.Api.Interfaces.IApiEntryPoint, ASC.Api"
-          name="sample"/&gt;
-</code>
-</pre>
+          name="sample"/&gt;</code></pre>
+
             </li>
-            <li>Build project, run website and test the method by making a query with jQuery<br />
-                <br />
-                GET:
-<pre>
-<code>
-$.get("http://localhost:port/api/2.0/sample/read.json");
-$.get("http://localhost:port/api/2.0/sample/read/{id}.json");
-</code>
-</pre>
-                POST:
-<pre>
-<code>
-$.ajax({
+            <li>
+                <p>Build project, run website and test the method by making a query with <span class="bg">jQuery</span></p>
+                <p>GET:</p>
+
+<pre class="bottom"><code>$.get("http://localhost:port/api/2.0/sample/read.json");
+$.get("http://localhost:port/api/2.0/sample/read/{id}.json");</code></pre>
+
+                <p>POST:</p>
+
+<pre class="bottom"><code>$.ajax({
     type: "POST",
     url: "http://localhost:port/api/2.0/sample/create.json",
     data: {value: "create"}
-});
-</code>
-</pre>
-                PUT:
-<pre>
-<code>
-$.ajax({
+});</code></pre>
+
+                <p>PUT:</p>
+
+<pre class="bottom"><code>$.ajax({
     type: "PUT",
     url: "http://localhost:port/api/2.0/sample/update.json",
     data: {id: 100500, value: "update"}
-});
-</code>
-</pre>
-                DELETE:
-<pre>
-<code>
-$.ajax({
+});</code></pre>
+
+                <p>DELETE:</p>
+
+<pre><code>$.ajax({
     url: "http://localhost:port/api/2.0/sample/delete/{id}.json",
     type: "DELETE"
-});
-</code>
-</pre>
+});</code></pre>
+
             </li>
         </ol>
 
