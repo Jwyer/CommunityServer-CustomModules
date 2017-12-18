@@ -8,7 +8,7 @@
 
         <p>If you have any questions, visit the links below:</p>
 
-        <ol>
+        <ul>
             <li>
                 <a href="http://helpcenter.onlyoffice.com/" target="_blank" class="link underline">Help Center</a>
             </li>
@@ -21,6 +21,6 @@
             <li>
                 <a href="http://support.onlyoffice.com/" target="_blank" class="link underline">Support Contact Form</a>
             </li>
-        </ol>
+        </ul>
     </div>
 </asp:Content>
