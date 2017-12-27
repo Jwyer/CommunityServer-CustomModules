@@ -1,3 +1,5 @@
+[![License](https://img.shields.io/badge/License-GNU%20GPL%20V3-green.svg?style=flat)](http://www.gnu.org/licenses/gpl-3.0.html)
+
 # CommunityServer-CustomModules
 
 **ONLYOFFICE Community Server** allows to add custom links to the portal navigation. Links to your own webpages, third-party websites, etc. can be added using the portal **Settings**. More information about this [here](http://helpcenter.onlyoffice.com/gettingstarted/configuration.aspx#ManagingPortalModules_block "http://helpcenter.onlyoffice.com/gettingstarted/configuration.aspx#ManagingPortalModules_block").
