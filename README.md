@@ -1,5 +1,9 @@
 # CommunityServer-CustomModules
 
+**ONLYOFFICE Community Server** allows to add custom links to the portal navigation. Links to your own webpages, third-party websites, etc. can be added using the portal **Settings**. More information about this [here](http://helpcenter.onlyoffice.com/gettingstarted/configuration.aspx#ManagingPortalModules_block "http://helpcenter.onlyoffice.com/gettingstarted/configuration.aspx#ManagingPortalModules_block").
+
+If you plan to write your own module and integrate it with the portal, use this repository and follow the steps below.
+
 ## How it works
 
 1. Get **ONLYOFFICE Community Server** from https://github.com/ONLYOFFICE/CommunityServer 
